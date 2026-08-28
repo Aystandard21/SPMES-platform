@@ -20,7 +20,7 @@ export const getDashboardStats = async (req, res) => {
     });
 
     const recentLogs = await prisma.auditLog.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: { timestamp: 'desc' },
       take: 4,
       include: { user: { select: { name: true, role: true } } }
     });
@@ -48,7 +48,7 @@ export const getAssignmentMatrix = async (req, res) => {
     });
 
     const lecturers = await prisma.user.findMany({
-      where: { role: 'lecturer' },
+      where: { role: { in: ['lecturer', 'LECTURER'] } },
       select: { 
         id: true, 
         name: true, 
@@ -111,7 +111,7 @@ export const autoAssign = async (req, res) => {
     }
 
     const lecturers = await prisma.user.findMany({
-      where: { role: 'lecturer' },
+      where: { role: { in: ['lecturer', 'LECTURER'] } },
       select: { id: true, _count: { select: { projectsAsLecturer: true } } }
     });
 
@@ -169,7 +169,7 @@ export const getUsers = async (req, res) => {
 export const getAuditLogs = async (req, res) => {
   try {
     const logs = await prisma.auditLog.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: { timestamp: 'desc' },
       take: 100
     });
     res.json(logs);
