@@ -9,10 +9,10 @@ A centralized web platform to digitize the complete final year project lifecycle
 Manual project tracking causes delays, lost documents, and poor supervisor-student communication.
 
 ## Tech Stack
-- **Frontend:** React + Vite (role-based UI)
-- **Backend:** Node.js + Express
-- **Database:** PostgreSQL via Supabase (Auth, Storage, DB)
-- **Workflow:** Vibe coding with Anti-Gravity IDE & Cursor
+- Frontend: React + Vite (role-based UI)
+- Backend: Node.js + Express
+- Database: PostgreSQL via Supabase (Auth, Storage, DB)
+- Workflow: Vibe coding with Anti-Gravity IDE & Cursor
 
 ## Features
 - Student: Submit topics, upload chapters, track approval
