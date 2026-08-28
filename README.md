@@ -27,3 +27,4 @@ Manual project tracking causes delays, lost documents, and poor supervisor-stude
 ## How to Run
 npm install
 npm run dev
+npm run dev
